@@ -3,8 +3,6 @@ package connect4;
 import java.util.Scanner;
 
 public class C4board {
-	/* Useful for debugging.
-	   */
 	   public static void tellUser(String prompt) {
 	      Scanner sc = new Scanner(System.in);
 	      String userInput;
@@ -118,10 +116,10 @@ public class C4board {
 			return(tie);
 		}
 	    
-		/* Each one of the following 7 check*() method
-	        returns the player piece of the winner
-	        or NO_WINNER if no one won.
-	   */
+	/* Each one of the following 7 check*() method
+	   returns the player piece of the winner
+	   or NO_WINNER if no one won.
+	*/
 	   public char checkSouth(C4boardPosition move) { 
 	      /* to be completed
 	      */
@@ -138,8 +136,6 @@ public class C4board {
 	   }
 	     
 	   public char checkEast(C4boardPosition move) {
-	      /* to be completed
-	      */
 		  int curRow = move.getRow();
 		  int curCol = move.getColumn();
 		  if (curCol <= NUM_TO_WIN - 2) {
@@ -162,8 +158,6 @@ public class C4board {
 	   }
 	    
 	   public char checkWest(C4boardPosition move) {
-	      /* to be completed
-	      */
 		   int curRow = move.getRow();
 		   int curCol = move.getColumn();
 			  if (curCol >= NUM_TO_WIN - 1) {
@@ -186,8 +180,6 @@ public class C4board {
 	   }
 	    
 	   public char checkNorthWest(C4boardPosition move) {
-	      /* to be completed
-	      */
 		   int curRow = move.getRow();
 		   int curCol = move.getColumn();
 		   if (curRow <= NUM_TO_WIN - 1 && curCol <= NUM_TO_WIN - 2) {
@@ -202,8 +194,6 @@ public class C4board {
 	   }
 	    
 	   public char checkNorthEast(C4boardPosition move) {
-	      /* to be completed
-	      */
 		   int curRow = move.getRow();
 		   int curCol = move.getColumn();
 		   if (curRow >= NUM_TO_WIN - 1 && curCol <= NUM_TO_WIN - 2) {
@@ -218,8 +208,6 @@ public class C4board {
 	   }
 	    
 	   public char checkSouthWest(C4boardPosition move) {
-	      /* to be completed
-	      */
 		  int curRow = move.getRow();
 		  int curCol = move.getColumn();
 		  if (curRow >= NUM_TO_WIN - 1 && curCol >= NUM_TO_WIN - 1) {
@@ -241,8 +229,6 @@ public class C4board {
 	   }
 	    
 	   public char checkSouthEast(C4boardPosition move) {
-	      /* to be completed
-	      */
 		   int curRow = move.getRow();
 		   int curCol = move.getColumn();
 		   if (curRow <= NUM_TO_WIN - 1 && curCol >= NUM_TO_WIN - 1) {
@@ -259,7 +245,6 @@ public class C4board {
 		public char getWinner(C4boardPosition move) {
 	      /* Check for a winner in 7 directions
 	         only check the next direction if a winner was not seen
-	         Note: no need to check north!! (Why not?)
 	           
 	         Things to note:
 	            - (0,0) is the bottom left element in the board
@@ -270,7 +255,7 @@ public class C4board {
 	              W * E
 	             SW S SE
 	             
-	            We must check 7 directions to see if there are 4 in a row:
+	            Check 7 directions to see if there are 4 in a row:
 	            NW - north west
 	            W - west
 	            SW - south west
